@@ -377,7 +377,7 @@ function! s:mg_git_commit(mode) abort
 			let commit_flag.=" --amend "
 		endif
 		let commit_cmd=g:magit_git_cmd . " commit " . commit_flag .
-					\ " --file - "
+					\ " -S --file - "
 		try
 			silent! let git_result=magit#sys#system(commit_cmd, commit_msg)
 		catch 'shell_error'
